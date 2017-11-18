@@ -1,0 +1,9 @@
+server:
+  port: 8090
+
+zuul:
+  routes:
+    ps-sample:
+      path: /ps-sample/**
+      url: http://web_service/
+
