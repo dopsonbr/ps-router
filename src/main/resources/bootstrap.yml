@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: router
+  cloud:
+    config:
+      enabled: true
+      discovery:
+        enabled: true
+        service-id: router
+      retry:
+        initial-interval: 2000
+        max-interval: 10000
+        multiplier: 2
+        max-attempts: 10
+
+eureka:
+  instance:
+    hostname: eureka_server
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka_server/eureka/
+
+management:
+  security:
+    enabled: false
+
+security:
+  basic:
+    enabled: false
+
+endpoints:
+ shutdown:
+  enabled: true
