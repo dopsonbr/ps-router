@@ -41,6 +41,7 @@ dependencies {
 	compile group: 'io.prometheus', name: 'simpleclient_spring_boot', version: '0.1.0'
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.cloud:spring-cloud-starter-zuul')
+	compile('org.springframework.cloud:spring-cloud-starter-eureka')
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 	testCompile('org.springframework.boot:spring-boot-starter-test')

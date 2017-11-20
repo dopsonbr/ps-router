@@ -1,3 +1,6 @@
+server:
+  port: 8060
+
 spring:
   application:
     name: router
@@ -15,12 +18,12 @@ spring:
 
 eureka:
   instance:
-    hostname: eureka_server
+    hostname: localhost
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://eureka_server/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 management:
   security:
@@ -33,3 +36,17 @@ security:
 endpoints:
  shutdown:
   enabled: true
+
+---
+spring:
+  profiles: docker
+
+eureka:
+  instance:
+    hostname: router
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka_server:8761/eureka/
+
